@@ -35,9 +35,7 @@
         #btnlnk {
             text-decoration: none;
         }
-        div#backg{
-            
-        }
+
         #CardBig{
             background-image: url("../static/giphy\ \(1\).gif");
                 height: 100%;
@@ -54,7 +52,7 @@
     <div class="container">
         <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
             <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
-           <img src="../static/icon.jpg" alt="" width="60" height="60">
+           <img src="../static/icon.png" alt="" width="60" height="60">
                 <span class="fs-4">AgroNutrition</span>
             </a>
 
@@ -71,18 +69,6 @@
         </header>
     </div>
     </div>
-
-    <!-- {{!-- <div class="alert alert-warning alert-dismissible show" id="alrt" role="alert">
-        <weak>input error try age 12 and above!</weak> You should check in on some of those fields below.
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-    </div> --}}
-    {{!-- <div class="alert alert-warning alert-dismissible show" id="alrt" role="alert">
-        <strong>Age exceeded TRY AGAIN!</strong> You should check in on some of those fields below.
-
-    </div> --}} -->
-
 
 
     <div class="cont">
@@ -236,7 +222,7 @@
                         <use xlink:href="#bootstrap"></use>
                     </svg>
                 </a>
-                <span class="text-muted">© 2023 Company</span>
+                <span class="text-muted">© 2023 The Dan Petro Company, Inc</span>
             </div>
 
             <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
@@ -269,34 +255,24 @@
         let docs = document.querySelector('#btnlnk');
         docs.addEventListener('click', submit)
         function submit() {
-            let lnk = document.getElementById('btnlnk')
-            let content = document.getElementById('conts').value
-            if (isNaN(content)) {
-                //!-- let mod = document.getElementById('mod');
-                //mod.style.display = 'block'; --}}
-
-                alert("Please enter a valid age");
-            }
-            else {
-                if (content > 0 && content <= 5) {
-                    lnk.setAttribute('href', 'https://www.bradford.gov.uk/media/1908/7-nutrition-guidelines-1-to-5-years.pdf');
-
-                }
-                else if (content > 5 && content <= 12) {
-                    lnk.setAttribute('href', 'https://www.wsh.nhs.uk/CMS-Documents/Patient-leaflets/PaediatricDepartment/6296-1-Healthy-eating-for-6-12-year-olds.pdf');
-                }
-                else if (content > 12 && content <= 18) {
-                    lnk.setAttribute('href', 'https://www.winchesterhospital.org/health-library/article?id=214376');
-                }
-                else if (content > 18 && content <= 60) {
-                    lnk.setAttribute('href', 'https://www.eatthis.com/best-foods-for-every-decade/');
-                }
-                else if (content > 60) {
-                    lnk.setAttribute('href', 'https://www.healthdirect.gov.au/healthy-eating-over-60');
-                }
-            }
-
-        };
+  let lnk = document.getElementById('btnlnk');
+  let content = document.getElementById('conts').value;
+  if (isNaN(content) || content <= 0 || content > 120) {
+    alert("Please enter a valid age");
+  } else {
+    if (content > 0 && content <= 5) {
+      lnk.setAttribute('href', 'https://www.bradford.gov.uk/media/1908/7-nutrition-guidelines-1-to-5-years.pdf');
+    } else if (content > 5 && content <= 12) {
+      lnk.setAttribute('href', 'https://www.wsh.nhs.uk/CMS-Documents/Patient-leaflets/PaediatricDepartment/6296-1-Healthy-eating-for-6-12-year-olds.pdf');
+    } else if (content > 12 && content <= 18) {
+      lnk.setAttribute('href', 'https://www.winchesterhospital.org/health-library/article?id=214376');
+    } else if (content > 18 && content <= 60) {
+      lnk.setAttribute('href', 'https://www.eatthis.com/best-foods-for-every-decade/');
+    } else if (content > 60 && content <= 120) {
+      lnk.setAttribute('href', 'https://www.healthdirect.gov.au/healthy-eating-over-60');
+    }
+  }
+};
 
     </script>
 
